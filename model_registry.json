@@ -1,0 +1,184 @@
+[
+  {
+    "id": "rppi-prokaryotic",
+    "dataset_version": "prokppi-original-v6",
+    "checkpoint": "rppi-prokaryotic/rppi-prokaryotic.pt",
+    "checkpoint_sha256": "6288de783500a0a487d971c6ceb6d2f6419f5f739dbae886939cd4a6cee647df",
+    "epoch": 4,
+    "training_data": {
+      "snapshot_id": "prokppi-original-v6",
+      "availability": "not_distributed",
+      "sha256": {
+        "train.tsv": "b5bf54000aef2250bb94543c090acae95ad5add8e56f1977886293bd3a9f7818",
+        "valid.tsv": "1c7ed0ad146eef2f72808f913d018567483b91b4a3333d342dbac429fe476a91",
+        "test.tsv": "b8ae5e9e03f7bacb79bb314fdb51a780d7613650e2cbd2e4094d11a669517dce",
+        "sequences.fasta": "d69cf1f33257aa45d4c3a07ad1b44b11370707df81769dc9e8c7eff669b98818"
+      }
+    },
+    "benchmark_data": {
+      "repository": "Monica-Gao/prokppi-bench",
+      "revision": "main",
+      "path": "releases/prokppi-bench"
+    },
+    "benchmark_evaluation_status": "not_evaluated_on_this_revision"
+  },
+  {
+    "id": "rppi-human-bernett",
+    "dataset_version": "bernett-human",
+    "checkpoint": "rppi-human-bernett/rppi-human-bernett.pt",
+    "checkpoint_sha256": "0892e6dd3d0fe75ca6b768101a97858bf8d172bdd41aa157e2f04330ffb29bf1",
+    "epoch": 5
+  },
+  {
+    "id": "rppi-human-transfer",
+    "dataset_version": "dscript-transfer-original",
+    "checkpoint": "rppi-human-transfer/rppi.pt",
+    "checkpoint_sha256": "73021ec7c9db799a03a83c63cf32565054a5bd93ec4a53457beadb98888bff87",
+    "epoch": 17,
+    "evaluation_settings": [
+      "Figure 3E",
+      "Figure 3F"
+    ],
+    "training_relation": "Human inner-training split; the same trained model is evaluated on original and target-side homology-filtered tests."
+  },
+  {
+    "id": "rppi-transfer-degree-aware-ecoli-human_p0_to_ecoli_p1",
+    "dataset_version": "dscript-transfer-degree-aware",
+    "checkpoint": "rppi-transfer-degree-aware/ecoli/human_p0_to_ecoli_p1/rppi.pt",
+    "checkpoint_sha256": "93dddac0073188d57af0d6c6c35845aff81e348d1eede3774c49a0ed6d296a76",
+    "epoch": 8,
+    "transfer_figure": "Figure 3G",
+    "species": "ecoli",
+    "direction": "human_p0_to_ecoli_p1",
+    "dataset_variant": "variants/ecoli/bernett_style/human_p0_to_ecoli_p1",
+    "training_relation": "Independently trained on the direction-specific human inner-training split.",
+    "training_config": "configs/release/transfer-degree-aware/ecoli/human_p0_to_ecoli_p1.yaml",
+    "evaluation_scope": "One of the two independently trained partition directions used in the unweighted per-species mean reported in Figure 3G; both checkpoints are released."
+  },
+  {
+    "id": "rppi-transfer-degree-aware-ecoli-human_p1_to_ecoli_p0",
+    "dataset_version": "dscript-transfer-degree-aware",
+    "checkpoint": "rppi-transfer-degree-aware/ecoli/human_p1_to_ecoli_p0/rppi.pt",
+    "checkpoint_sha256": "1441ee26ade50e284bf605b650a6ad1627aaa7b96cee4ca4fab259b49eea6368",
+    "epoch": 10,
+    "transfer_figure": "Figure 3G",
+    "species": "ecoli",
+    "direction": "human_p1_to_ecoli_p0",
+    "dataset_variant": "variants/ecoli/bernett_style/human_p1_to_ecoli_p0",
+    "training_relation": "Independently trained on the direction-specific human inner-training split.",
+    "training_config": "configs/release/transfer-degree-aware/ecoli/human_p1_to_ecoli_p0.yaml",
+    "evaluation_scope": "One of the two independently trained partition directions used in the unweighted per-species mean reported in Figure 3G; both checkpoints are released."
+  },
+  {
+    "id": "rppi-transfer-degree-aware-yeast-human_p0_to_yeast_p1",
+    "dataset_version": "dscript-transfer-degree-aware",
+    "checkpoint": "rppi-transfer-degree-aware/yeast/human_p0_to_yeast_p1/rppi.pt",
+    "checkpoint_sha256": "d2c8c3ec7182d3222fec4a5e03b12f764e220a58ec712021e792620e335e8d78",
+    "epoch": 6,
+    "transfer_figure": "Figure 3G",
+    "species": "yeast",
+    "direction": "human_p0_to_yeast_p1",
+    "dataset_variant": "variants/yeast/bernett_style/human_p0_to_yeast_p1",
+    "training_relation": "Independently trained on the direction-specific human inner-training split.",
+    "training_config": "configs/release/transfer-degree-aware/yeast/human_p0_to_yeast_p1.yaml",
+    "evaluation_scope": "One of the two independently trained partition directions used in the unweighted per-species mean reported in Figure 3G; both checkpoints are released."
+  },
+  {
+    "id": "rppi-transfer-degree-aware-yeast-human_p1_to_yeast_p0",
+    "dataset_version": "dscript-transfer-degree-aware",
+    "checkpoint": "rppi-transfer-degree-aware/yeast/human_p1_to_yeast_p0/rppi.pt",
+    "checkpoint_sha256": "d3c97b1eafea6b30e4a6f989dc3d126e450b5e448ce206a99f6c7b6ca649fb7f",
+    "epoch": 10,
+    "transfer_figure": "Figure 3G",
+    "species": "yeast",
+    "direction": "human_p1_to_yeast_p0",
+    "dataset_variant": "variants/yeast/bernett_style/human_p1_to_yeast_p0",
+    "training_relation": "Independently trained on the direction-specific human inner-training split.",
+    "training_config": "configs/release/transfer-degree-aware/yeast/human_p1_to_yeast_p0.yaml",
+    "evaluation_scope": "One of the two independently trained partition directions used in the unweighted per-species mean reported in Figure 3G; both checkpoints are released."
+  },
+  {
+    "id": "rppi-transfer-degree-aware-fly-human_p0_to_fly_p1",
+    "dataset_version": "dscript-transfer-degree-aware",
+    "checkpoint": "rppi-transfer-degree-aware/fly/human_p0_to_fly_p1/rppi.pt",
+    "checkpoint_sha256": "e3f389c49b9ad5a0ee539687d15049e8aac10deb047b9ddaec4e3c056d85daa9",
+    "epoch": 10,
+    "transfer_figure": "Figure 3G",
+    "species": "fly",
+    "direction": "human_p0_to_fly_p1",
+    "dataset_variant": "variants/fly/bernett_style/human_p0_to_fly_p1",
+    "training_relation": "Independently trained on the direction-specific human inner-training split.",
+    "training_config": "configs/release/transfer-degree-aware/fly/human_p0_to_fly_p1.yaml",
+    "evaluation_scope": "One of the two independently trained partition directions used in the unweighted per-species mean reported in Figure 3G; both checkpoints are released."
+  },
+  {
+    "id": "rppi-transfer-degree-aware-fly-human_p1_to_fly_p0",
+    "dataset_version": "dscript-transfer-degree-aware",
+    "checkpoint": "rppi-transfer-degree-aware/fly/human_p1_to_fly_p0/rppi.pt",
+    "checkpoint_sha256": "80746c1da4ed34f0af4d2152038797c072fef175e1606e657e789b999f98232a",
+    "epoch": 11,
+    "transfer_figure": "Figure 3G",
+    "species": "fly",
+    "direction": "human_p1_to_fly_p0",
+    "dataset_variant": "variants/fly/bernett_style/human_p1_to_fly_p0",
+    "training_relation": "Independently trained on the direction-specific human inner-training split.",
+    "training_config": "configs/release/transfer-degree-aware/fly/human_p1_to_fly_p0.yaml",
+    "evaluation_scope": "One of the two independently trained partition directions used in the unweighted per-species mean reported in Figure 3G; both checkpoints are released."
+  },
+  {
+    "id": "rppi-transfer-degree-aware-mouse-human_p0_to_mouse_p1",
+    "dataset_version": "dscript-transfer-degree-aware",
+    "checkpoint": "rppi-transfer-degree-aware/mouse/human_p0_to_mouse_p1/rppi.pt",
+    "checkpoint_sha256": "f62fbfa90ec8234dbad2c94aee3a38a0258c9061c0b24e05f2f7a2654e35b994",
+    "epoch": 5,
+    "transfer_figure": "Figure 3G",
+    "species": "mouse",
+    "direction": "human_p0_to_mouse_p1",
+    "dataset_variant": "variants/mouse/bernett_style/human_p0_to_mouse_p1",
+    "training_relation": "Independently trained on the direction-specific human inner-training split.",
+    "training_config": "configs/release/transfer-degree-aware/mouse/human_p0_to_mouse_p1.yaml",
+    "evaluation_scope": "One of the two independently trained partition directions used in the unweighted per-species mean reported in Figure 3G; both checkpoints are released."
+  },
+  {
+    "id": "rppi-transfer-degree-aware-mouse-human_p1_to_mouse_p0",
+    "dataset_version": "dscript-transfer-degree-aware",
+    "checkpoint": "rppi-transfer-degree-aware/mouse/human_p1_to_mouse_p0/rppi.pt",
+    "checkpoint_sha256": "21e61ec4c6b1d0af01e14cdde4440f5065cc769548fe63383bd0586b50fd3a3d",
+    "epoch": 6,
+    "transfer_figure": "Figure 3G",
+    "species": "mouse",
+    "direction": "human_p1_to_mouse_p0",
+    "dataset_variant": "variants/mouse/bernett_style/human_p1_to_mouse_p0",
+    "training_relation": "Independently trained on the direction-specific human inner-training split.",
+    "training_config": "configs/release/transfer-degree-aware/mouse/human_p1_to_mouse_p0.yaml",
+    "evaluation_scope": "One of the two independently trained partition directions used in the unweighted per-species mean reported in Figure 3G; both checkpoints are released."
+  },
+  {
+    "id": "rppi-transfer-degree-aware-worm-human_p0_to_worm_p1",
+    "dataset_version": "dscript-transfer-degree-aware",
+    "checkpoint": "rppi-transfer-degree-aware/worm/human_p0_to_worm_p1/rppi.pt",
+    "checkpoint_sha256": "af7a48f9bd446db5462b8e1f0b3220cc428b60f012e1d98e04a5418e3b70e152",
+    "epoch": 6,
+    "transfer_figure": "Figure 3G",
+    "species": "worm",
+    "direction": "human_p0_to_worm_p1",
+    "dataset_variant": "variants/worm/bernett_style/human_p0_to_worm_p1",
+    "training_relation": "Independently trained on the direction-specific human inner-training split.",
+    "training_config": "configs/release/transfer-degree-aware/worm/human_p0_to_worm_p1.yaml",
+    "evaluation_scope": "One of the two independently trained partition directions used in the unweighted per-species mean reported in Figure 3G; both checkpoints are released."
+  },
+  {
+    "id": "rppi-transfer-degree-aware-worm-human_p1_to_worm_p0",
+    "dataset_version": "dscript-transfer-degree-aware",
+    "checkpoint": "rppi-transfer-degree-aware/worm/human_p1_to_worm_p0/rppi.pt",
+    "checkpoint_sha256": "7d08ede91c558b362dbaabf781fa78bcf838ab224747dc15471154cab6e55d76",
+    "epoch": 6,
+    "transfer_figure": "Figure 3G",
+    "species": "worm",
+    "direction": "human_p1_to_worm_p0",
+    "dataset_variant": "variants/worm/bernett_style/human_p1_to_worm_p0",
+    "training_relation": "Independently trained on the direction-specific human inner-training split.",
+    "training_config": "configs/release/transfer-degree-aware/worm/human_p1_to_worm_p0.yaml",
+    "evaluation_scope": "One of the two independently trained partition directions used in the unweighted per-species mean reported in Figure 3G; both checkpoints are released."
+  }
+]

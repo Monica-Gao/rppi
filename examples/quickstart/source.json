@@ -1,0 +1,39 @@
+{
+  "dataset": "prokppi-bench",
+  "dataset_repository": "Monica-Gao/prokppi-bench",
+  "dataset_revision": "main",
+  "model": "rppi-prokaryotic",
+  "selection": "Six short protein pairs retained in the final benchmark: one positive and one sampled negative from each split, with twelve distinct protein sequences. This small example checks the workflow rather than benchmark performance.",
+  "source_files": {
+    "train": {
+      "file": "releases/prokppi-bench/train.tsv",
+      "sha256": "716073d5a01b92c9223ce727675ead11c56c70f7e18c84f7e742516e9c04a696"
+    },
+    "valid": {
+      "file": "releases/prokppi-bench/valid.tsv",
+      "sha256": "9481af9b52316968f4509e20e16b883a841c9ba54306b734cf076965218d7a77"
+    },
+    "test": {
+      "file": "releases/prokppi-bench/test.tsv",
+      "sha256": "ba32eeb02ba0b8420dd6299c32311f3d29d0ad9156537e7276d8d1068371360b"
+    },
+    "sequences": {
+      "file": "releases/prokppi-bench/sequences.fasta",
+      "sha256": "6b2394caedaf288e3bed0ec3d99f8ee55e71352283989d421c7d5458997aa4b4"
+    }
+  },
+  "proteins": {
+    "1004316.GCA_001854765_01480": 51,
+    "1004316.GCA_001854765_02995": 56,
+    "1123392.GCA_000376425_01975": 50,
+    "1123392.GCA_000376425_01976": 51,
+    "1210088.GCA_001613145_04869": 57,
+    "1210088.GCA_001613145_07319": 51,
+    "1236959.GCA_000617925_03016": 59,
+    "1236959.GCA_000617925_03617": 54,
+    "1392497.GCA_000687955_00979": 58,
+    "1392497.GCA_000687955_02024": 54,
+    "167546.P9301_02761": 50,
+    "167546.P9301_03421": 50
+  }
+}

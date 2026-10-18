@@ -1,0 +1,51 @@
+seed: 42
+data:
+  embedding_dir: data/embeddings/human
+  sequence_length: 795
+  embed_dim: 1024
+  preload: false
+  cache_embeddings: false
+  train:
+    tsv: data/dscript-transfer-homology-filtered/train.tsv
+  valid:
+    tsv: data/dscript-transfer-homology-filtered/valid.tsv
+  test:
+    tsv: data/dscript-transfer-homology-filtered/pairs/yeast_test.tsv
+    embedding_dir: data/embeddings/yeast
+model:
+  input_dim: 1024
+  hidden_dim: 192
+  num_heads: 6
+  num_layers: 2
+  cross_layers: 2
+  ff_dim: 768
+  dropout: 0.15
+  chunk_size: 16
+  sequence_length: 795
+  projection_dim: 256
+training:
+  epochs: 20
+  batch_size: 32
+  eval_batch_size: 256
+  grad_accum_steps: 2
+  num_workers: 0
+  lr: 0.0002
+  weight_decay: 0.02
+  grad_clip: 1.0
+  amp: true
+  patience: 4
+  monitor: aupr
+  log_every: 200
+  auto_resume: true
+  evaluate_test_at_end: true
+  symmetric_eval: true
+  contrastive_temperature: 0.1
+  rank_margin: 0.5
+  loss_weights:
+    symmetry: 0.05
+    contrastive: 0.0
+    ranking: 0.0
+output:
+  name: rppi-transfer-homology-filtered-yeast
+  dir: runs/rppi-transfer-homology-filtered-yeast
+  checkpoint_dir: runs/rppi-transfer-homology-filtered-yeast/checkpoints

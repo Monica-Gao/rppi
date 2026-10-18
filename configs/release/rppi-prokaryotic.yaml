@@ -1,0 +1,55 @@
+seed: 42
+data:
+  embedding_dir: data/embeddings/prokppi-bench
+  sequence_length: 795
+  embed_dim: 1024
+  preload: false
+  cache_embeddings: true
+  train:
+    tsv: data/prokppi-bench/train.tsv
+  valid:
+    tsv: data/prokppi-bench/valid.tsv
+  test:
+    tsv: data/prokppi-bench/test.tsv
+model:
+  input_dim: 1024
+  hidden_dim: 192
+  num_heads: 6
+  num_layers: 2
+  cross_layers: 2
+  ff_dim: 768
+  dropout: 0.15
+  chunk_size: 16
+  sequence_length: 795
+  projection_dim: 256
+  shortcut_adversary: true
+  degree_bins: 4
+training:
+  epochs: 20
+  batch_size: 32
+  eval_batch_size: 64
+  grad_accum_steps: 2
+  num_workers: 0
+  lr: 0.0002
+  weight_decay: 0.02
+  grad_clip: 1.0
+  amp: true
+  patience: 4
+  monitor: aupr
+  log_every: 100
+  symmetric_train: false
+  symmetric_eval: true
+  shortcut_lambda: 0.2
+  label_smoothing: 0.03
+  contrastive_temperature: 0.1
+  rank_margin: 0.5
+  loss_weights:
+    symmetry: 0.03
+    contrastive: 0.0
+    ranking: 0.0
+    same_species_adv: 0.02
+    degree_adv: 0.01
+output:
+  name: rppi-prokaryotic
+  dir: runs/rppi-prokaryotic
+  checkpoint_dir: runs/rppi-prokaryotic/checkpoints
